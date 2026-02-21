@@ -14,14 +14,24 @@ export default function Home() {
     alert("UPI ID copied");
   };
 
+  const downloadQR = () => {
+  const link = document.createElement("a");
+  link.href = "/images/qr.jpeg"; // your QR image path
+  link.download = "upi-qr.jpeg";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
   return (
     <main className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
 
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center scale-100"
-        style={{ backgroundImage: "url('/images/bg.jpeg')",
-              filter: "blur(3.4px)",}}
+        style={{ backgroundImage: "url('/images/bg.jpeg')" ,
+          filter: "blur(3.4px)",
+        }}
       ></div>
 
       <div className="absolute inset-0 bg-black/30"></div>
@@ -100,6 +110,14 @@ export default function Home() {
               alt="QR Code"
               className="w-56 mx-auto rounded-xl"
             />
+
+            <button
+  onClick={downloadQR}
+  className="mt-4 mx-auto block px-5 py-2 rounded-full border font-medium active:scale-95 transition"
+  style={{ color: "#fa5f5d", borderColor: "#fa5f5d" }}
+>
+  Download QR
+</button>
 
             {/* UPI ID */}
             <div className="mt-5 text-center">
