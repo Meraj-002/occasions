@@ -20,7 +20,8 @@ export default function Home() {
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center scale-100"
-        style={{ backgroundImage: "url('/images/bg.jpeg')" }}
+        style={{ backgroundImage: "url('/images/bg.jpeg')",
+              filter: "blur(3.4px)",}}
       ></div>
 
       <div className="absolute inset-0 bg-black/30"></div>
