@@ -19,7 +19,7 @@ export default function Home() {
 
       {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center blur-sm scale-110"
+        className="absolute inset-0 bg-cover bg-center scale-100"
         style={{ backgroundImage: "url('/images/bg.jpeg')" }}
       ></div>
 
