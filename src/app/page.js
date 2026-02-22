@@ -1,5 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// Handle browser/mobile back button
+useEffect(() => {
+  const handleBack = () => {
+    setShowQR(false);
+  };
+
+  if (showQR) {
+    window.history.pushState({ qr: true }, "");
+    window.addEventListener("popstate", handleBack);
+  }
+
+  return () => {
+    window.removeEventListener("popstate", handleBack);
+  };
+}, [showQR]);
 
 export default function Home() {
   const [amount, setAmount] = useState("");
