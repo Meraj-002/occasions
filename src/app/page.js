@@ -1,7 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 
-// Handle browser/mobile back button
+
+
+export default function Home() {
+  const [amount, setAmount] = useState("");
+  const [showQR, setShowQR] = useState(false);
+
+  // Handle browser/mobile back button
 useEffect(() => {
   const handleBack = () => {
     setShowQR(false);
@@ -16,10 +22,6 @@ useEffect(() => {
     window.removeEventListener("popstate", handleBack);
   };
 }, [showQR]);
-
-export default function Home() {
-  const [amount, setAmount] = useState("");
-  const [showQR, setShowQR] = useState(false);
 
   const upiId = "meraj666@ptaxis";
 
